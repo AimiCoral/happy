@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stylesheet" href="css/index.css">
+<body>
+	<div class="back">
+		<span class=" title" ><img src="images/zi1.png" alt=""></span>
+		<div class="back-left">
+			<canvas id="cas">提醒您：ie低版本用户请一边惭愧去吧，ie9可能需刷新</canvas>
+			<div id="code">
+				<canvas id="cavas" width="400" height="400"></canvas>
+			</div>
+			
+		</div>
+		<div class="back-right">
+			<span><img src="images/9.png" alt=""></span>
+			<span><img src="images/1.png" alt=""></span>
+			<span><img src="images/9.png" alt=""></span>
+			<span class="music">
+				<img src="images/mic.png" alt="">
+				<audio src="happay.mp3" autoplay loop paused></audio>
+			</span>
+			<h3 data-shadow="Happy Birthday"> Happy Birthday</h3>
+			
+		</div>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/heart.js"></script>
+<script src="js/word.js"></script>
+<script src="js/snow.js"></script>
+<script>
+	window.onload=function(){
+	// function heart(){
+			var vector={},i=10;
+		timer1=setInterval(function(){
+			vector=getHeartPoint(i);
+			dots.push(new Dot(vector.x,vector.y));
+			if(i<30){
+				i+=0.3;
+			}else{
+				clearInterval(timer1);
+			}
+		},100);
+		
+		timer2=setInterval(function(){
+			for(var i=0;i<dots.length;i++){
+				dots[i].draw();
+			}
+		});
+		Typing("cavas");
+	}
+	
+	// adjustCodePosition();
+	// $("#code").typewriter();
+
+</script>
+</html>
